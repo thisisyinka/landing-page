@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Dragon Shield</title>
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="logo">
+        <img src="./images/dragon-shield.png" alt="Logo" />
+      </div>
+      <ul class="nav_list"></ul>
+    </nav>
+    <main>
+        <section data-nav="Header Hero" class="header_hero" id="header_hero">
+            <header class="intro-text">
+                <h2>Welcome to Dragon Shield</h2>
+            </header>
+        </section>
+        <section data-nav="About Us" class="about-us" id="about-us">
+            <h2>About Us</h2>
+            <div class="about-wrapper">
+                <div class="text">
+                    <!-- Text gotten from Corporate Ipsum Generator (https://www.cipsum.com/) -->
+                    <p>
+                        Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                    </p>
+                    <br />
+                    <p>
+                        Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring
+                    </p>
+                </div>
+                <span class="image">
+                    <!-- Image gotten from Storyset (https://storyset.com/illustration/gaming/pana) -->
+                    <img src="./images/gaming.png" src="About Us" />
+                </span>
+            </div>
+        </section>
+        <section data-nav="Videos"" class="videos" id="videos">
+            <h2>Walkthroughs</h2>
+            <div class="videos-wrapper">
+                <div class="card">
+                    <!-- All videos belong to theRadBrad (https://www.youtube.com/user/theRadBrad) -->
+                    <div class="video">
+                        <iframe width="300" height="255" src="https://www.youtube.com/embed/qN3Y1DrMCX8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-text">
+                        <h3>Spider-Man: Miles Morales Walkthrough </h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="video">
+                        <iframe width="300" height="255" src="https://www.youtube.com/embed/4MglAQncpTM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-text">
+                        <h3>COD: Modern Warefare Walkthrough</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="video">
+                        <iframe width="300" height="255" src="https://www.youtube.com/embed/ohIUD15dypk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-text">
+                        <h3>Death Stranding <br /> Walkthrough</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="video">
+                        <iframe width="300" height="255" src="https://www.youtube.com/embed/oUMRwOAa-BY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-text">
+                        <h3>God of War <br /> Walkthrough </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section data-nav="Contact Us" class="contact-us" id="contact-us">
+            <h2>Get in touch now!</h2>
+            <div class="contact-wrapper">
+                <form method="POST">
+                    <p class="top">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" placeholder="Your Name" required/>
+                        
+                        <label for="email" class="email-label">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Your Email" required/>
+                    </p>
+                    <p class="bottom">
+                        <label for="message">Message:</label>
+                        <br />
+                        <textarea id="message" name="message" rows="5" cols="30" placeholder="Your Message" required></textarea>
+                    </p>
+                    <p class="submit-button">
+                        <button type="submit">Send</button>
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <span class="text">
+            &copy; 2021. Dragon Shield. All Rights Reserved.
+        </span>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>
