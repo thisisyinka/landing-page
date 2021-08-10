@@ -1,9 +1,3 @@
-/** Get Id names of each section */
-const heroSectionID = document.querySelector('#header_hero').id;
-const aboutSectionID = document.querySelector('#about-us').id;
-const videosSectionID = document.querySelector('#videos').id;
-const contactSectionID = document.querySelector('#contact-us').id;
-
 /** Get each Id */
 const heroSection = document.querySelector('#header_hero');
 const aboutSection = document.querySelector('#about-us');
@@ -21,19 +15,19 @@ let activeLink = document.querySelector('.active');
 const navItems = [
     {
         name: 'Home',
-        id: heroSectionID
+        id: heroSection.id
     },
     {
-        name: 'About Us',
-        id: aboutSectionID
+        name: 'About',
+        id: aboutSection.id
     },
     {
         name: 'Walkthrough',
-        id: videosSectionID
+        id: videosSection.id
     },
     {
-        name: 'Contact Us',
-        id: contactSectionID
+        name: 'Contact',
+        id: contactSection.id
     }
 ];
 
@@ -52,18 +46,29 @@ const dynamicMenu = () => {
     return;
 }
 
+
+/** Clear active class from all links */
+const removeActiveClasses = (links) => {
+    links.forEach((navLink) => {
+        navLink.classList.remove('active');
+    });
+}
+
 dynamicMenu();
 
 
 /** Scroll effect  */
 const scrollEffect = () => {
-    const allNavLinks = document.querySelectorAll('a');
-        for(const navLink of allNavLinks) {
+    const navLinks = document.querySelectorAll('.nav_link');
+        for(const navLink of navLinks) {
             navLink.addEventListener('click',  function(e) {
                 e.preventDefault();
+                removeActiveClasses(navLinks);
                 const links = navLink.getAttribute('href');
-                document.querySelector(links).scrollIntoView({ behavior: 'smooth' });
-                navLink.classList.add('active');       
+                document
+                    .querySelector(links)
+                    .scrollIntoView({ behavior: 'smooth' });
+                navLink.classList.add('active');
             });
         }
     return;
@@ -72,19 +77,35 @@ const scrollEffect = () => {
 scrollEffect();
 
 
-/** Active state - Adding active class to section */
+/** Active state */
 const checkViewport = () => {
-    window.addEventListener('scroll', function() {
-        allSections.forEach(sec => {
-            const section = sec.getBoundingClientRect();
-            if(section.top >= 153 && section.top <= 354) {
-                sec.classList.add('active');
+    const startCheck = () => {
+        const navLinks = [...document.querySelectorAll('.nav_link')];
+        for (const navLink of navLinks) {
+            const link = navLink.getAttribute('href').split('#')[1];
+            const rect = document.getElementById(link).getBoundingClientRect();
+            
+            /** 
+             * Gotten from StackOverflow (https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport)
+             * Gotten specifically from Leonheess's "The simplest solutions..." response
+             * Slightly modified to suit my needs
+             */
+            const isActive = rect.top <= window.innerHeight && rect.top >= 0;
+
+            if (isActive) {
+                removeActiveClasses(navLinks);
+                navLink.classList.add('active');
+                break;
             } else {
-                sec.classList.remove('active');
+                navLink.classList.remove('active');
             }
-        });
-    });
+        }
+    };
+
+    /** Run function first before scroll listener is triggered */
+    startCheck();
+    window.addEventListener('scroll', startCheck);
     return;
-}
+};
 
 checkViewport();

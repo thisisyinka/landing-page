@@ -24,7 +24,7 @@ section {
 }
 
 .navigation .logo img {
-    width: 80px;
+    display: none;
 }
 
 .navigation .nav_list {
@@ -37,6 +37,7 @@ section {
 .navigation .nav_list .nav_item {
     padding-right: 25px;
     list-style-type: none;
+    font-size: 12px;
 }
 
 .navigation .nav_list .nav_link {
@@ -44,7 +45,7 @@ section {
     color: #fff;
 }
 
-.active {
+.navigation .nav_list .nav_link.active {
     text-decoration: underline wavy #B33920;
 }
 
@@ -72,13 +73,7 @@ section {
 
 .intro-text h2 {
     color: #B33920;
-}
-
-.intro-text p {
-    font-size: 10px;
-    margin-top: 10px;
-    line-height: 20px;
-    text-align: center;
+    font-size: 18px;
 }
 
 
@@ -92,19 +87,19 @@ section {
 }
 
 .about-wrapper, .videos-wrapper {
-    padding: 40px 80px;
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .about-wrapper .text {
-    width: 800px;
-    padding: 0 90px 0 0;
+    width: 100%;
+    /* padding: 0 30px 0 0; */
 }
 
 .about-wrapper .image img {
-    width: 90%;
+    display: none;
 }
 
 
@@ -135,7 +130,7 @@ section {
 
 /*CONTACT*/
 .contact-wrapper {
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -143,6 +138,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 20px 0;
 }
 
@@ -152,7 +148,7 @@ input[type="email"], input[type="text"] {
 }
 
 .email-label {
-    margin-left: 15px;
+    margin: 15px 0 0 0;
 }
 
 .contact-wrapper .bottom {
@@ -205,56 +201,60 @@ legend {
 }
 
 
-@media screen and (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
-        padding: 0 80px;
-    }
-
-    .videos-wrapper {
-        display: grid;
-        grid-template-columns: repeat(4, 300px);
-        gap: 15px;
-    }
-
-    .contact-wrapper .bottom {
-        width: 500px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .container {
-        max-width: 960px;
-    }
-
-    .videos-wrapper {
-        display: grid;
-        grid-template-columns: repeat(4, 300px);
-        gap: 15px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 720px;
-    }
-
-    .videos-wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 300px);
-        gap: 15px;
-    }
-}
-
-/*
 @media screen and (min-width: 576px) {
     .container {
         max-width: 540px;
     }
 
+    .navigation .logo img {
+        width: 80px;
+        display: block;
+    }
+
+    .navigation .nav_list .nav_item {
+        font-size: inherit;
+    }
+
+    .intro-text h2 {
+        font-size: 25px;
+    }
+
+    .about-wrapper .text {
+        width: 800px;
+        padding: 0 90px 0 0;
+    }
+
+    .about-wrapper .image img {
+        display: block;
+        width: 90%;
+    }
+
+    .about-wrapper, .videos-wrapper {
+        padding: 40px 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .videos-wrapper {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0 5px;
+        grid-template-columns: repeat(4, 300px);
+        gap: 15px;
     }
-} */
+
+    .contact-wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .contact-wrapper .top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .email-label {
+        margin-left: -8px;
+    }
+}
