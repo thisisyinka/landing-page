@@ -11,7 +11,7 @@ const allLinks = document.querySelectorAll('.nav_link');
 let activeLink = document.querySelector('.active');
 
 
-/** Array to store each navigation item */
+/** Array to store each navigation item and its id */
 const navItems = [
     {
         name: 'Home',
@@ -95,9 +95,8 @@ const checkViewport = () => {
             if (isActive) {
                 removeActiveClasses(navLinks);
                 navLink.classList.add('active');
+                /** After adding the active class to a link, this stops it from adding the active class to the rest of the links */
                 break;
-            } else {
-                navLink.classList.remove('active');
             }
         }
     };
