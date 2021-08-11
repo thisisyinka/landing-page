@@ -1,4 +1,4 @@
-/** Get each Id */
+/** Get sections */
 const heroSection = document.querySelector('#header_hero');
 const aboutSection = document.querySelector('#about-us');
 const videosSection = document.querySelector('#videos');
